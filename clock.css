@@ -1,0 +1,120 @@
+*,
+::after,::before{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(to right,hsl(200,100%,50%) ,hsl(175,100%,50%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+} 
+
+.clock{
+    width: 300px;
+    height: 300px;
+    background:rgb(177, 224, 231);
+    border-radius: 50%;
+    border:2px solid black;
+    position: relative;
+}
+.clock::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+
+}
+.clock .number{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size:1.2rem;
+    /* background-color: red; */
+}
+
+.clock .number1{
+    --rotation:30deg;
+}
+.clock .number2{
+    --rotation:60deg;
+}
+.clock .number3{
+    --rotation:90deg;
+}
+.clock .number4{
+    --rotation:120deg;
+}
+.clock .number5{
+    --rotation:150deg;
+}
+.clock .number6{
+    --rotation:180deg;
+}
+.clock .number7{
+    --rotation:210deg;
+}
+.clock .number8{
+    --rotation:240deg;
+}
+.clock .number9{
+    --rotation:270deg;
+}
+.clock .number10{
+    --rotation:300deg;
+}
+.clock .number11{
+    --rotation:330deg;
+}
+
+.clock .hand{
+    --rotation:30deg;
+    position: absolute;
+    bottom: 50%;
+    left:50%;
+    background-color: black;
+    transform-origin:bottom ;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    border: 1px solid white;
+    z-index: 10;
+}
+
+.clock .hand.second{
+    /* --rotation:30deg; */
+    width: 3px;
+    height: 40%;
+    background-color: rgb(10, 12, 12);
+
+}
+.clock .hand.minutes{
+    /* --rotation:60deg; */
+    width: 7px;
+    height: 35%;
+    background-color: rgb(205, 17, 36);
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+
+}
+.clock .hand.hour{
+    /* --rotation:300deg; */
+    width: 7px;
+    height: 30%;
+    background-color: rgb(205, 17, 36);
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+
+}
+
+
